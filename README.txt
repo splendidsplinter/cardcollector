@@ -1,3 +1,7 @@
+Cardcollector based on - AppFuse Basic JSF Archetype
+--------------------------------------------------------------------------------
+I utilized the AppFuse framework to build a simple web app for my SpringHibe class
+
 AppFuse Basic JSF Archetype
 --------------------------------------------------------------------------------
 If you're reading this then you've created your new project using Maven and
