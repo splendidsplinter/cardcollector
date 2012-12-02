@@ -90,4 +90,25 @@
             <value description="role_id">-1</value>
         </row>
     </table>
+    <table name='card'>
+    <column>id</column>
+    <column>fName</column>
+    <column>lName</column>
+    <column>title</column>
+    <column>description</column>
+    <row>
+    <value>1</value>
+    <value>Barry</value>
+    <value>Bonds</value>
+    <value>OF</value>
+    <value>Giants OF</value>
+    </row>
+    <row>
+    <value>2</value>
+    <value>Wil</value>
+    <value>Middlebrooks</value>
+    <value>3B</value>
+    <value>Red Sox 3B</value>
+    </row>
+    </table>
 </dataset>

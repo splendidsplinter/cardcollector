@@ -1,18 +1,20 @@
 package com.fingerpaint.cardcollector.model;
 
+import java.util.Collection;
 import java.util.Date;
-import java.util.Set;
+import java.util.HashSet;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.appfuse.model.BaseObject;
 import org.hibernate.annotations.Entity;
 
 @Entity
-public class Collection extends BaseObject{
+public class CardCollection extends BaseObject{
 	
 	/**
 	 * 
@@ -21,15 +23,16 @@ public class Collection extends BaseObject{
 	private Long id;
 	private Date issueYear;
 	private String issueCompany;
-	private Set<Card> cards;
 	
+	@OneToMany(mappedBy = "collection")
+	private Collection<Card> cards;
 	
-
-	public Collection(Long id, Date issueYear, String issueCompany) {
+	public CardCollection(Long id, Date issueYear, String issueCompany) {
 		super();
 		this.id = id;
 		this.issueYear = issueYear;
 		this.issueCompany = issueCompany;
+		this.cards = new HashSet<Card>();
 	}
 
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
@@ -59,19 +62,18 @@ public class Collection extends BaseObject{
 		this.issueCompany = issueCompany;
 	}
 
-	public Set<Card> getCards() {
+	public Collection<Card> getCards() {
 		return cards;
 	}
 
-	public void setCards(Set<Card> cards) {
+	public void setCards(Collection<Card> cards) {
 		this.cards = cards;
 	}
 	
 	public void addToCards(Card card) {
 		this.cards.add(card);
 	}
-	
-	
+		
 	@Override
 	public boolean equals(Object arg0) {
 		// TODO Auto-generated method stub

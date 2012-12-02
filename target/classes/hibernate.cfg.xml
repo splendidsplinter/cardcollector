@@ -8,5 +8,7 @@
     <session-factory>
         <mapping class="org.appfuse.model.User"/>
         <mapping class="org.appfuse.model.Role"/>
+        <mapping class="com.fingerpaint.cardcollector.model.Card"/>
+        <mapping class="com.fingerpaint.cardcollector.model.CardCollection"/>
     </session-factory>
 </hibernate-configuration>
