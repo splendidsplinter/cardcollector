@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:t="http://myfaces.apache.org/tomahawk">
+ 
+<f:view>
+<f:loadBundle var="text" basename="#{cardList.bundleName}"/>
+    <head>
+        <title>#{text['cardList.title']}</title>
+        <meta name="heading" content="#{text['cardList.heading']}"/>
+        <meta name="menu" content="cardMenu"/>
+    </head>
+<body id="cardList">
+<h:form id="editcard">
+ 
+<h:commandButton value="#{text['button.add']}" action="add" id="add" immediate="true" styleClass="button"/>
+<h:commandButton value="#{text['button.done']}" action="mainMenu" id="cancel" immediate="true" styleClass="button" style="margin-left: 5px"/>
+ 
+<!-- Error from this table is caused by http://issues.apache.org/jira/browse/TOMAHAWK-466 -->
+<t:dataTable id="cards" var="card" style="margin-top: 10px"
+    value="#{cardList.cards}" rows="25" sortColumn="#{cardList.sortColumn}"
+    sortAscending="#{cardList.ascending}" styleClass="scrollerTable table"
+    headerClass="standardTable_Header" rowClasses="standardTable_Row1,standardTable_Row2"
+    columnClasses="standardTable_Column,standardTable_Column,standardTable_Column,standardTable_Column,standardTable_ColumnCentered">
+ 
+    <t:column>
+        <f:facet name="header">
+            <t:commandSortHeader columnName="id" arrow="true">
+                <h:outputText value="#{text['card.id']}" />
+            </t:commandSortHeader>
+        </f:facet>
+        <h:commandLink action="#{cardForm.edit}" value="#{card.id}">
+            <f:param name="id" value="#{card.id}"/>
+            <f:param name="from" value="list"/>
+        </h:commandLink>
+    </t:column>
+ 
+    <t:column>
+        <f:facet name="header">
+            <t:commandSortHeader columnName="fName" arrow="true">
+                <h:outputText value="#{text['card.fName']}" />
+            </t:commandSortHeader>
+        </f:facet>
+        <h:outputText value="#{card.fName}" escape="true"/>
+    </t:column>
+ 
+    <t:column>
+        <f:facet name="header">
+            <t:commandSortHeader columnName="lName" arrow="true">
+                <h:outputText value="#{text['card.lName']}" />
+            </t:commandSortHeader>
+        </f:facet>
+        <h:outputText value="#{card.lName}" escape="true"/>
+    </t:column>
+ 
+</t:dataTable>
+ 
+<ui:include src="/common/tableFooter.xhtml">
+    <ui:param name="tableName" value="cards"/>
+</ui:include>
+ 
+<script type="text/javascript">
+    highlightTableRows("editcard:cards");
+</script>
+ 
+</h:form>
+</body>
+</f:view>
+</html>

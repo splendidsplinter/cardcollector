@@ -108,6 +108,14 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
+    
+    <navigation-rule>
+    <from-view-id>/cardss.xhtml</from-view-id>
+    <navigation-case>
+        <from-outcome>add</from-outcome>
+        <to-view-id>/cardForm.xhtml</to-view-id>
+    </navigation-case>
+	</navigation-rule>
     <!-- Add additional rules here -->
 
     <managed-bean>

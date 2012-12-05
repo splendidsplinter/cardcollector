@@ -24,6 +24,7 @@
         </jaxrs:features>
         <jaxrs:serviceBeans>
             <ref bean="userManager"/>
+            <ref bean="cardManager"/>
         </jaxrs:serviceBeans>
         <jaxrs:providers>
             <ref bean="jsonProvider"/>

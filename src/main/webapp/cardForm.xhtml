@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:t="http://myfaces.apache.org/tomahawk"
+      xmlns:v="http://shale.apache.org/validator">
+ 
+<f:view>
+<f:loadBundle var="text" basename="#{cardForm.bundleName}"/>
+    <head>
+        <title>#{text['cardDetail.title']}</title>
+        <meta name="heading" content="#{text['cardDetail.heading']}"/>
+        <meta name="menu" content="cardMenu"/>
+    </head>
+<body id="cardForm">
+ 
+<h:form id="cardForm">
+<h:inputHidden value="#{cardForm.card.id}" id="id"/>
+ 
+<h:panelGrid columns="3">
+ 
+    <h:outputLabel styleClass="desc" for="fName" value="#{text['card.firstName']}"/>
+    <h:inputText styleClass="text medium" id="fName" value="#{cardForm.card.fName}"/>
+    <t:message for="fName" styleClass="fieldError"/>
+ 
+    <h:outputLabel styleClass="desc" for="lName" value="#{text['card.lName']}"/>
+ 
+    <h:inputText styleClass="text medium" id="lastName" value="#{cardForm.card.lName}"/>
+    <t:message for="lName" styleClass="fieldError"/>
+ 
+    <h:inputText styleClass="text medium" id="title" value="#{cardForm.card.title}"/>
+    <t:message for="title" styleClass="fieldError"/>
+    
+ <h:panelGroup styleClass="buttonBar bottom">
+        <h:commandButton value="#{text['button.save']}" action="#{cardForm.save}" id="save" styleClass="button"/>
+ 
+        <c:if test="${not empty cardForm.card.id}">
+        <h:commandButton value="#{text['button.delete']}" action="#{cardForm.delete}"
+            id="delete" styleClass="button"/>
+        </c:if>
+ 
+        <h:commandButton value="#{text['button.cancel']}" action="cancel" immediate="true" 
+            id="cancel" styleClass="button"/>
+    </h:panelGroup>
+    <h:outputText/><h:outputText/>
+</h:panelGrid>
+</h:form>
+ 
+<script type="text/javascript">
+    $('cardForm:fName').focus();
+    highlightFormElements();
+</script>
+ 
+</body>
+</f:view>
+</html>

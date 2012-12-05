@@ -4,9 +4,9 @@
     <!--database>
         <jndi-name>jdbc/appfuse</jndi-name>
         <driver type="com.mysql.jdbc.Driver">
-            <url>jdbc:mysql://localhost/cardcollector?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true</url>
+            <url>jdbc:mysql://ec2-107-22-149-16.compute-1.amazonaws.com/cardcollector?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true</url>
             <user>root</user>
-            <password></password>
+            <password>M!SQLR00t!</password>
         </driver>
     </database-->
 </web-app>

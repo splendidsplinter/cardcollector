@@ -20,9 +20,9 @@
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost/cardcollector?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true"/>
+        <property name="url" value="jdbc:mysql://ec2-107-22-149-16.compute-1.amazonaws.com/cardcollector?createDatabaseIfNotExist=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;autoReconnect=true"/>
         <property name="username" value="root"/>
-        <property name="password" value=""/>
+        <property name="password" value="M!SQLR00t!"/>
         <property name="maxActive" value="100"/>
         <property name="maxWait" value="1000"/>
         <property name="poolPreparedStatements" value="true"/>

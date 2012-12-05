@@ -682,6 +682,7 @@
         <amp.genericCore>true</amp.genericCore>
         <amp.fullSource>false</amp.fullSource>
         <db.name>cardcollector</db.name>
+        <db.server>ec2-107-22-149-16.compute-1.amazonaws.com</db.server>
 
         <!-- Framework dependency versions -->
         <acegijsf.version>1.1.3</acegijsf.version>
@@ -726,8 +727,8 @@
         <jdbc.artifactId>mysql-connector-java</jdbc.artifactId>
         <jdbc.version>5.1.14</jdbc.version>
         <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
-        <jdbc.url>jdbc:mysql://localhost/${db.name}?createDatabaseIfNotExist=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;autoReconnect=true</jdbc.url>
+        <jdbc.url>jdbc:mysql://${db.server}/${db.name}?createDatabaseIfNotExist=true&amp;amp;useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;autoReconnect=true</jdbc.url>
         <jdbc.username>root</jdbc.username>
-        <jdbc.password></jdbc.password>
+        <jdbc.password>M!SQLR00t!</jdbc.password>
     </properties>
 </project>
